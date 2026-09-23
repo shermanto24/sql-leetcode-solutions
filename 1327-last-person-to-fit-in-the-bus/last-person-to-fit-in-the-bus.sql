@@ -11,6 +11,10 @@ with turns_ordered as
 )
 select person_name
 from turns_ordered
-where turn = (select max(turn) from turns_ordered where total_weight <= 1000)
-group by person_name
+where total_weight <= 1000
+order by total_weight desc
+limit 1
+-- Old solution
+-- where turn = (select max(turn) from turns_ordered where total_weight <= 1000)
+-- group by person_name
 ;
