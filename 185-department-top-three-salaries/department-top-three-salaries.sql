@@ -1,5 +1,6 @@
 # Write your MySQL query statement below
-with salary_ranks as
+select department, employee, salary
+from
 (
     select
         d.name as department,
@@ -12,11 +13,6 @@ with salary_ranks as
     order by 
         departmentid asc,
         salary desc
-)
-select
-    department,
-    employee,
-    salary
-from salary_ranks
+) as t
 where rnk <= 3
 ;
