@@ -6,6 +6,7 @@ select
     conditions
 from patients
 where conditions regexp '(^| )DIAB1'
+;
 
 -- Without regex
 -- select
